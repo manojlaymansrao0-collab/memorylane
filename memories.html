@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beautiful Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+.logo{
+    font-family:'Dancing Script',cursive;
+    color:#ff4f87;
+    font-size:2rem;
+}
+
+nav a{
+    text-decoration:none;
+    color:#ff4f87;
+    font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#ff4f87;
+    font-family:'Dancing Script',cursive;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.1rem;
+}
+
+/* GENERAL */
+
+.section{
+    padding:80px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:3rem;
+    color:#ff4f87;
+    margin-bottom:50px;
+}
+
+/* FEATURED MEMORY */
+
+.featured{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.featured img{
+    width: 100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:40px;
+}
+
+.featured-text h2{
+    color:#ff4f87;
+    margin-bottom:15px;
+}
+
+.featured-text p{
+    line-height:1.9;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:"";
+    position:absolute;
+    width:4px;
+    background:#ff4f87;
+    top:0;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.memory{
+    width:50%;
+    padding:20px 40px;
+    position:relative;
+}
+
+.memory.left{
+    left:0;
+}
+
+.memory.right{
+    left:50%;
+}
+
+.memory-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.memory-card h3{
+    color:#ff4f87;
+    margin-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* FAVORITE MEMORY */
+
+.favorite{
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.favorite img{
+    width:100%;
+    max-width:800px;
+    height: 300px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.favorite h2{
+    color:#ff4f87;
+    margin:20px 0;
+}
+
+/* MEMORY WALL */
+
+.wall{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.wall-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.wall-card:hover{
+    transform:translateY(-8px);
+}
+
+.wall-card h3{
+    color:#ff4f87;
+    margin-bottom:10px;
+}
+
+/* CLOSING */
+
+.closing{
+    background:white;
+    text-align:center;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.closing h2{
+    color:#ff4f87;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    background:#ff4f87;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+/* ANIMATION */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.7rem;
+}
+
+.featured{
+    grid-template-columns:1fr;
+}
+
+.timeline::after{
+    left:20px;
+}
+
+.memory{
+    width:100%;
+    left:0 !important;
+    padding-left:60px;
+    padding-right:10px;
+}
+
+.title{
+    font-size:2.2rem;
+}
+
+nav{
+    padding:15px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+     <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<nav>
+    <div class="logo">📸 Memories</div>
+    <a href="index.html">🏠 Home</a>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Beautiful Memories ❤️</h1>
+        <p>Every picture tells a story. Every memory holds a feeling.</p>
+    </div>
+</section>
+
+<!-- FEATURED MEMORY -->
+
+<section class="section fade">
+
+<h2 class="title">⭐ Featured Memory</h2>
+
+<div class="featured">
+
+<img src="image4.jpg" alt="Featured Memory">
+
+<div class="featured-text">
+<h2>A Moment To Remember</h2>
+
+<p>
+Some moments stay with us forever.
+They remind us of happiness, laughter,
+love, and the people who make life special.
+
+This memory is one of those unforgettable moments
+that will always have a special place in our hearts.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="section fade">
+
+<h2 class="title">🕰️ Journey Through Time</h2>
+
+<div class="timeline">
+
+<div class="memory left">
+<div class="memory-card">
+<h3>2015</h3>
+<p>The beginning of many wonderful memories.</p>
+</div>
+</div>
+
+<div class="memory right">
+<div class="memory-card">
+<h3>2018</h3>
+<p>A year filled with adventures and laughter.</p>
+</div>
+</div>
+
+<div class="memory left">
+<div class="memory-card">
+<h3>2021</h3>
+<p>Special celebrations and unforgettable moments.</p>
+</div>
+</div>
+
+<div class="memory right">
+<div class="memory-card">
+<h3>2024</h3>
+<p>New milestones and beautiful experiences.</p>
+</div>
+</div>
+
+<div class="memory left">
+<div class="memory-card">
+<h3>Today</h3>
+<p>Celebrating a journey filled with memories.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section class="section fade">
+
+<h2 class="title">📷 Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="image2.jpg" alt="">
+<img src="image3.jpg" alt="">
+<img src="image4.jpg" alt="">
+<img src="image5.jpg" alt="">
+<img src="image6.jpg" alt="">
+<img src="image7.jpg" alt="">
+<img src="image8.jpg" alt="">
+<img src="image9.jpg" alt="">
+
+</div>
+
+</section>
+
+<!-- FAVORITE MEMORY -->
+
+<section class="section fade">
+
+<h2 class="title">❤️ Favorite Memory</h2>
+
+<div class="favorite">
+
+<img src="image10.jpg" alt="Favorite Memory">
+
+<h2>A Memory We Cherish</h2>
+
+<p>
+Among all the moments we've shared,
+this one remains especially meaningful.
+
+A reminder of joy, togetherness,
+and memories that time can never erase.
+</p>
+
+</div>
+
+</section>
+
+<!-- MEMORY WALL -->
+
+<section class="section fade">
+
+<h2 class="title">✨ Memory Wall</h2>
+
+<div class="wall">
+
+<div class="wall-card">
+<h3>❤️</h3>
+<p>The day we laughed endlessly.</p>
+</div>
+
+<div class="wall-card">
+<h3>📸</h3>
+<p>A photo that never gets old.</p>
+</div>
+
+<div class="wall-card">
+<h3>🌟</h3>
+<p>A memory that still makes us smile.</p>
+</div>
+
+<div class="wall-card">
+<h3>🎉</h3>
+<p>A celebration we'll never forget.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CLOSING -->
+
+<section class="section fade">
+
+<div class="closing">
+
+<h2>Every Memory Tells A Story ❤️</h2>
+
+<p>
+The best moments in life become memories.
+The best memories become treasures.
+And the best treasures stay with us forever.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>📸 Thank You For The Memories ❤️</h2>
+
+<p>
+The story continues...
+and the best memories are yet to come.
+</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el => {
+observer.observe(el);
+});
+
+</script>
+<script>
+window.addEventListener("load", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.volume = 0.3;
+
+    document.body.addEventListener("click", () => {
+        music.play();
+    }, { once:true });
+
+});
+</script>
+<script>
+
+document.addEventListener("click", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.play();
+
+}, { once: true });
+
+</script>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if(savedTime){
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+music.volume = 0.3;
+
+</script>
+
+
+
+</body>
+</html>

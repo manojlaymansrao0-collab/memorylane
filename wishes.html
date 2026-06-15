@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+min-height:100vh;
+color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+z-index:1000;
+}
+
+.logo{
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#ff4f87;
+}
+
+nav a{
+text-decoration:none;
+color:#ff4f87;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+color:#ff4f87;
+}
+
+.hero p{
+margin-top:10px;
+font-size:1.1rem;
+}
+
+/* LETTER */
+
+.container{
+padding:30px 10%;
+}
+
+.letter{
+background:white;
+max-width:900px;
+margin:auto;
+padding:50px;
+border-radius:30px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.letter h2{
+color:#ff4f87;
+margin-bottom:25px;
+}
+
+#letterText{
+line-height:2;
+font-size:1.1rem;
+white-space:pre-line;
+min-height:400px;
+}
+
+.cursor{
+display:inline-block;
+color:#ff4f87;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
+
+.signature{
+margin-top:40px;
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#ff4f87;
+opacity:0;
+transition:1s;
+}
+
+.signature.show{
+opacity:1;
+}
+
+.quote{
+margin-top:25px;
+text-align:center;
+font-style:italic;
+color:#777;
+opacity:0;
+transition:1s;
+}
+
+.quote.show{
+opacity:1;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+background:#ff4f87;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+footer h2{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.letter{
+padding:30px;
+}
+
+#letterText{
+font-size:1rem;
+}
+
+}
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 18px;
+border:none;
+border-radius:50px;
+background:#ff4f87;
+color:white;
+cursor:pointer;
+z-index:999;
+}
+#skipBtn{
+    padding:12px 24px;
+    border:none;
+    border-radius:30px;
+    background:#ff4f87;
+    color:white;
+    cursor:pointer;
+    margin-bottom:20px;
+    font-size:1rem;
+    transition:.3s;
+}
+
+#skipBtn:hover{
+    transform:translateY(-3px);
+}
+</style>
+</head>
+
+<body>
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<div class="logo">💌 Letter</div>
+<a href="index.html">🏠 Home</a>
+</nav>
+
+<section class="hero">
+
+<h1>A Letter From The Heart ❤️</h1>
+
+<p>
+Some words are best written, remembered, and cherished forever.
+</p>
+
+</section>
+
+<section class="container">
+
+<div class="letter">
+
+<h2>Dear Special One,</h2>
+<button id="skipBtn">⏩ Skip Animation</button>
+
+<div id="letterText"></div>
+
+<div id="letterText"></div>
+
+<div class="signature" id="signature">
+With Love ❤️
+</div>
+
+<div class="quote" id="quote">
+"Sometimes the simplest words carry the deepest meaning."
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>❤️ Thank You ❤️</h2>
+
+<p>
+For the memories, the smiles, and the moments that matter.
+</p>
+
+</footer>
+<script>
+
+const letter = `
+
+Today is a wonderful day to pause and reflect on all the beautiful moments that have been shared over the years.
+
+Life is made up of memories, laughter, lessons, and countless little moments that often become the most meaningful.
+
+This small letter is simply a reminder of how much you are appreciated and valued.
+
+Thank you for the kindness, support, smiles, encouragement, and positivity you have brought into the lives of others.
+
+Your presence has created memories that will always be treasured and moments that will never be forgotten.
+
+May your days be filled with happiness, good health, peace, success, and endless reasons to smile.
+
+May every dream you hold in your heart find its way into reality.
+
+And may the journey ahead be even more beautiful than the one that brought you here today.
+
+No matter where life leads, may you always remember how special you are and how much you are appreciated.
+
+Thank you for being you. ❤️
+
+`;
+
+const letterText = document.getElementById("letterText");
+const skipBtn = document.getElementById("skipBtn");
+const signature = document.getElementById("signature");
+const quote = document.getElementById("quote");
+
+let i = 0;
+let typingFinished = false;
+
+function finishLetter(){
+    letterText.innerHTML = letter;
+    signature.classList.add("show");
+    quote.classList.add("show");
+    skipBtn.style.display = "none";
+    typingFinished = true;
+}
+
+function typeWriter(){
+
+    if(typingFinished) return;
+
+    if(i < letter.length){
+
+        letterText.innerHTML =
+        letter.substring(0,i+1) +
+        '<span class="cursor">|</span>';
+
+        i++;
+
+        setTimeout(typeWriter,35);
+
+    }else{
+
+        finishLetter();
+
+    }
+}
+
+skipBtn.addEventListener("click", () => {
+    finishLetter();
+});
+
+window.onload = () => {
+    setTimeout(typeWriter,800);
+};
+</script>
+<!-- <script>
+
+document.addEventListener("click", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.play();
+
+}, { once: true });
+
+</script> -->
+
+ <script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if(savedTime){
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+music.volume = 0.3;
+
+</script>
+<!--<script>
+
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.onclick = () => {
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML = "🔊 Playing";
+    }else{
+        music.pause();
+        btn.innerHTML = "🎵 Play Music";
+    }
+
+};
+
+</script> -->
+<!-- <script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+// restore time
+music.addEventListener("loadedmetadata", () => {
+    const time = localStorage.getItem("musicTime");
+    if(time){
+        music.currentTime = parseFloat(time);
+    }
+});
+
+// save time continuously
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+// first user interaction unlocks audio
+document.addEventListener("click", () => {
+    music.play().catch(()=>{});
+}, { once:true });
+
+// button toggle
+btn.addEventListener("click", () => {
+    if(music.paused){
+        music.play();
+        btn.innerText = "🔊 Playing";
+        localStorage.setItem("musicPaused","false");
+    }else{
+        music.pause();
+        btn.innerText = "🎵 Play Music";
+        localStorage.setItem("musicPaused","true");
+    }
+});
+
+// restore pause state
+window.addEventListener("load", () => {
+    if(localStorage.getItem("musicPaused") === "true"){
+        music.pause();
+        btn.innerText = "🎵 Play Music";
+    }
+});
+
+music.volume = 0.3; -->
+</script>
+</body>
+</html>
