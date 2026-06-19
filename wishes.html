@@ -18,9 +18,9 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+background:linear-gradient(135deg,#050B1F,#0B1635,#11224D);
 min-height:100vh;
-color:#333;
+color:#EAF2FF;
 }
 
 /* NAVBAR */
@@ -28,26 +28,33 @@ color:#333;
 nav{
 position:sticky;
 top:0;
-background:rgba(255,255,255,.85);
-backdrop-filter:blur(10px);
+background:rgba(8,18,45,.85);
+backdrop-filter:blur(15px);
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
-box-shadow:0 2px 10px rgba(0,0,0,.05);
+box-shadow:0 2px 20px rgba(0,255,255,.1);
 z-index:1000;
+border-bottom:1px solid rgba(0,255,255,.15);
 }
 
 .logo{
 font-family:'Dancing Script',cursive;
 font-size:2rem;
-color:#ff4f87;
+color:#5DE4FF;
+text-shadow:0 0 15px rgba(93,228,255,.5);
 }
 
 nav a{
 text-decoration:none;
-color:#ff4f87;
+color:#C8D9FF;
 font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#5DE4FF;
 }
 
 /* HERO */
@@ -60,12 +67,14 @@ padding:80px 20px 40px;
 .hero h1{
 font-size:4rem;
 font-family:'Dancing Script',cursive;
-color:#ff4f87;
+color:#5DE4FF;
+text-shadow:0 0 20px rgba(93,228,255,.4);
 }
 
 .hero p{
 margin-top:10px;
 font-size:1.1rem;
+color:#B8C8E8;
 }
 
 /* LETTER */
@@ -75,16 +84,17 @@ padding:30px 10%;
 }
 
 .letter{
-background:white;
+background:rgba(15,28,60,.9);
 max-width:900px;
 margin:auto;
 padding:50px;
 border-radius:30px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+border:1px solid rgba(93,228,255,.15);
 }
 
 .letter h2{
-color:#ff4f87;
+color:#5DE4FF;
 margin-bottom:25px;
 }
 
@@ -93,11 +103,12 @@ line-height:2;
 font-size:1.1rem;
 white-space:pre-line;
 min-height:400px;
+color:#EAF2FF;
 }
 
 .cursor{
 display:inline-block;
-color:#ff4f87;
+color:#5DE4FF;
 animation:blink .8s infinite;
 }
 
@@ -111,7 +122,7 @@ opacity:0;
 margin-top:40px;
 font-family:'Dancing Script',cursive;
 font-size:2rem;
-color:#ff4f87;
+color:#5DE4FF;
 opacity:0;
 transition:1s;
 }
@@ -124,7 +135,7 @@ opacity:1;
 margin-top:25px;
 text-align:center;
 font-style:italic;
-color:#777;
+color:#9DB0D7;
 opacity:0;
 transition:1s;
 }
@@ -137,16 +148,72 @@ opacity:1;
 
 footer{
 margin-top:60px;
-background:#ff4f87;
-color:white;
+background:linear-gradient(135deg,#08122D,#10204A);
+color:#EAF2FF;
 padding:40px;
 text-align:center;
+border-top:1px solid rgba(93,228,255,.15);
 }
 
 footer h2{
 font-family:'Dancing Script',cursive;
 font-size:2.5rem;
 margin-bottom:10px;
+color:#5DE4FF;
+}
+footer{
+margin-top:60px;
+background:linear-gradient(135deg,#08122D,#10204A);
+color:#EAF2FF;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(93,228,255,.15);
+}
+
+footer h2{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+margin-bottom:10px;
+color:#5DE4FF;
+}
+.freelance-footer{
+    width:100%;
+    margin-top:25px;
+    padding:15px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.freelance-footer span{
+    color:#D7E5FF;
+    font-size:.95rem;
+}
+
+.mini-btn{
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.email{
+    background:#5DE4FF;
+    color:#08122D;
+}
+
+.mini-btn:hover{
+    transform:translateY(-2px);
 }
 
 /* MOBILE */
@@ -166,7 +233,7 @@ font-size:1rem;
 }
 
 }
-#musicBtn{
+/* #musicBtn{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -177,21 +244,24 @@ background:#ff4f87;
 color:white;
 cursor:pointer;
 z-index:999;
-}
+} */
 #skipBtn{
-    padding:12px 24px;
-    border:none;
-    border-radius:30px;
-    background:#ff4f87;
-    color:white;
-    cursor:pointer;
-    margin-bottom:20px;
-    font-size:1rem;
-    transition:.3s;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#5DE4FF,#2BB8FF);
+color:#08122D;
+font-weight:600;
+cursor:pointer;
+margin-bottom:20px;
+font-size:1rem;
+transition:.3s;
+box-shadow:0 0 20px rgba(93,228,255,.3);
 }
 
 #skipBtn:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(93,228,255,.5);
 }
 </style>
 </head>
@@ -236,17 +306,18 @@ With Love ❤️
 
 </div>
 
+
 </section>
 
-<footer>
+<div class="freelance-footer">
 
-<h2>❤️ Thank You ❤️</h2>
+    <span>🚀 Need a custom website like this?</span>
 
-<p>
-For the memories, the smiles, and the moments that matter.
-</p>
+<div class="contact-buttons"> 
+    <a href="https://wa.me/918522833095?text=Hello%20Manoj,%20I%20would%20like%20to%20order%20a%20custom%20website.%20Can%20you%20share%20details%20and%20pricing?" target="_blank" class="mini-btn whatsapp"> 💬 WhatsApp </a> 
+    <a href="mailto:polipillimanojkumar123@gmail.com?subject=Website%20Order%20Inquiry&body=Hello%20Manoj,%0A%0AI%20would%20like%20to%20order%20a%20custom%20website.%0A%0APlease%20share:%0A-%20Pricing%0A-%20Delivery%20Time%0A-%20Available%20Designs%0A%0AThank%20You." class="mini-btn email"> 
+        📧 Email </a> </div>
 
-</footer>
 <script>
 
 const letter = `
@@ -350,7 +421,7 @@ document.addEventListener("click", () => {
     music.play();
 }, { once:true });
 
-music.volume = 0.3;
+music.volume = 2;
 
 </script>
 <!--<script>
@@ -417,6 +488,6 @@ window.addEventListener("load", () => {
 });
 
 music.volume = 0.3; -->
-
+</script>
 </body>
 </html>
