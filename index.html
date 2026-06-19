@@ -20,11 +20,11 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#fff0f5,#ffe4ec);
-color:#333;
+background:
+radial-gradient(circle at top,#1E3A8A 0%,#0F172A 40%,#020617 100%);
+color:#E2E8F0;
 overflow-x:hidden;
 }
-
 /* NAVBAR */
 
 nav{
@@ -36,16 +36,18 @@ padding:15px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,.8);
-backdrop-filter:blur(10px);
+background:rgba(2,6,23,.85);
+backdrop-filter:blur(15px);
 z-index:1000;
-box-shadow:0 2px 15px rgba(0,0,0,.05);
+box-shadow:0 0 25px rgba(59,130,246,.15);
+border-bottom:1px solid rgba(96,165,250,.15);
 }
 
 .logo{
 font-family:'Dancing Script',cursive;
 font-size:2rem;
-color:#ff4f87;
+color:#60A5FA;
+text-shadow:0 0 15px rgba(96,165,250,.5);
 }
 
 nav ul{
@@ -56,11 +58,14 @@ list-style:none;
 
 nav a{
 text-decoration:none;
-color:#444;
+color:#E2E8F0;
 font-weight:600;
 transition:.3s;
 }
 
+nav a:hover{
+color:#60A5FA;
+}
 nav a:hover{
 color:#ff4f87;
 }
@@ -85,8 +90,10 @@ width:280px;
 height:280px;
 object-fit:cover;
 border-radius:50%;
-border:8px solid white;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+border:4px solid rgba(96,165,250,.4);
+box-shadow:
+0 0 25px rgba(59,130,246,.4),
+0 0 60px rgba(59,130,246,.2);
 animation:float 4s infinite ease-in-out;
 }
 
@@ -94,7 +101,8 @@ animation:float 4s infinite ease-in-out;
 font-family:'Dancing Script',cursive;
 font-size:4rem;
 margin-top:25px;
-color:#ff4f87;
+color:#60A5FA;
+text-shadow:0 0 20px rgba(96,165,250,.5);
 }
 
 .hero p{
@@ -115,15 +123,21 @@ flex-wrap:wrap;
 padding:14px 28px;
 border:none;
 border-radius:40px;
-background:#ff4f87;
+background:linear-gradient(
+135deg,
+#2563EB,
+#3B82F6
+);
 color:white;
 cursor:pointer;
 font-size:1rem;
 transition:.3s;
+box-shadow:0 0 20px rgba(59,130,246,.3);
 }
 
 .btn:hover{
 transform:translateY(-5px);
+box-shadow:0 0 35px rgba(59,130,246,.6);
 }
 
 /* SECTIONS */
@@ -135,20 +149,21 @@ padding:90px 10%;
 .title{
 text-align:center;
 font-size:3rem;
-color:#ff4f87;
+color:#60A5FA;
 margin-bottom:50px;
+text-shadow:0 0 15px rgba(96,165,250,.4);
 }
-
 /* MESSAGE */
 
 .message-box{
-background:white;
+background:rgba(15,23,42,.8);
 padding:40px;
 border-radius:25px;
 max-width:900px;
 margin:auto;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+border:1px solid rgba(96,165,250,.15);
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 /* CARDS */
@@ -160,22 +175,24 @@ gap:25px;
 }
 
 .card{
-background:white;
+background:rgba(15,23,42,.8);
 padding:30px;
 border-radius:25px;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+border:1px solid rgba(96,165,250,.15);
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 transition:.3s;
 cursor:pointer;
 }
 
 .card:hover{
 transform:translateY(-10px);
+box-shadow:0 0 30px rgba(59,130,246,.3);
 }
 
 .card h3{
 margin-bottom:15px;
-color:#ff4f87;
+color:#60A5FA;
 }
 
 /* HIGHLIGHT */
@@ -199,11 +216,12 @@ font-size:1.1rem;
 /* FOOTER */
 
 footer{
-background:#ff4f87;
+background:#020617;
 padding:60px 20px;
 text-align:center;
-color:white;
+color:#E2E8F0;
 margin-top:50px;
+border-top:1px solid rgba(96,165,250,.15);
 }
 
 footer h2{
@@ -262,18 +280,31 @@ right:20px;
 padding:12px 18px;
 border:none;
 border-radius:50px;
-background:#ff4f87;
+background:#2563EB;
 color:white;
 cursor:pointer;
 z-index:999;
+box-shadow:0 0 20px rgba(59,130,246,.5);
 }
-
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(circle at 20% 30%,rgba(96,165,250,.15) 0%,transparent 20%),
+radial-gradient(circle at 80% 70%,rgba(59,130,246,.15) 0%,transparent 20%);
+pointer-events:none;
+z-index:-1;
+}
 </style>
 
 </head>
 
 <body>
- <audio id="bgMusic" autoplay loop>
+ <audio id="bgMusic" autoplay muted loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn">🎵 Play Music</button>
@@ -481,6 +512,10 @@ music.volume = 0.3;
 <script>
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
+document.addEventListener("click", () => {
+    music.muted = false;
+    music.play();
+}, { once:true });
 
 // restore time
 music.addEventListener("loadedmetadata", () => {
@@ -523,7 +558,7 @@ window.addEventListener("load", () => {
     }
 });
 
-music.volume = 0.5;
+music.volume = 2;
 </script>
 </body>
 
