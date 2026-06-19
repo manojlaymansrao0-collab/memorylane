@@ -19,36 +19,36 @@
 }
 
 body{
-    background:linear-gradient(135deg,#fff0f5,#ffe4ec);
-    color:#333;
+    background:linear-gradient(135deg,#081120,#0f172a,#16213e);
+    color:#e5e7eb;
     overflow-x:hidden;
 }
-
 /* NAVBAR */
 
 nav{
     position:sticky;
     top:0;
     width:100%;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(10px);
+    background:rgba(8,17,32,.9);
+    backdrop-filter:blur(12px);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 40px;
     z-index:1000;
-    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    box-shadow:0 2px 20px rgba(0,0,0,.3);
+    border-bottom:1px solid rgba(96,165,250,.15);
 }
 
 .logo{
     font-family:'Dancing Script',cursive;
-    color:#ff4f87;
+    color:#60a5fa;
     font-size:2rem;
 }
 
 nav a{
     text-decoration:none;
-    color:#ff4f87;
+    color:#93c5fd;
     font-weight:600;
 }
 
@@ -65,13 +65,15 @@ nav a{
 
 .hero h1{
     font-size:4rem;
-    color:#ff4f87;
+    color:#60a5fa;
     font-family:'Dancing Script',cursive;
+    text-shadow:0 0 25px rgba(96,165,250,.4);
 }
 
 .hero p{
     margin-top:15px;
     font-size:1.1rem;
+    color:#cbd5e1;
 }
 
 /* GENERAL */
@@ -83,21 +85,34 @@ nav a{
 .title{
     text-align:center;
     font-size:3rem;
-    color:#ff4f87;
+    color:#60a5fa;
     margin-bottom:50px;
+    text-shadow:0 0 15px rgba(96,165,250,.3);
 }
 
 /* FEATURED MEMORY */
-
 .featured{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:30px;
     align-items:center;
-    background:white;
+    background:#111827;
     padding:30px;
     border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08),
+    0 0 40px rgba(96,165,250,.04);
+}
+
+.featured-text h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.featured-text p{
+    line-height:1.9;
+    color:#d1d5db;
 }
 
 .featured img{
@@ -107,14 +122,7 @@ nav a{
     border-radius:40px;
 }
 
-.featured-text h2{
-    color:#ff4f87;
-    margin-bottom:15px;
-}
 
-.featured-text p{
-    line-height:1.9;
-}
 
 /* TIMELINE */
 
@@ -128,7 +136,7 @@ nav a{
     content:"";
     position:absolute;
     width:4px;
-    background:#ff4f87;
+    background:#60a5fa;
     top:0;
     bottom:0;
     left:50%;
@@ -150,15 +158,22 @@ nav a{
 }
 
 .memory-card{
-    background:white;
+    background:#111827;
     padding:25px;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08),
+    0 0 40px rgba(96,165,250,.04);
 }
 
 .memory-card h3{
-    color:#ff4f87;
+    color:#60a5fa;
     margin-bottom:10px;
+}
+
+.memory-card p{
+    color:#d1d5db;
 }
 
 /* GALLERY */
@@ -175,21 +190,36 @@ nav a{
     object-fit:cover;
     border-radius:20px;
     transition:.4s;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 15px rgba(96,165,250,.08);
 }
 
 .gallery img:hover{
     transform:scale(1.03);
+    box-shadow:
+    0 0 25px rgba(96,165,250,.2);
 }
 
 /* FAVORITE MEMORY */
 
 .favorite{
-    background:white;
+    background:#111827;
     border-radius:25px;
     padding:30px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
+}
+
+.favorite h2{
+    color:#60a5fa;
+    margin:20px 0;
+}
+
+.favorite p{
+    color:#d1d5db;
 }
 
 .favorite img{
@@ -200,10 +230,7 @@ nav a{
     border-radius:20px;
 }
 
-.favorite h2{
-    color:#ff4f87;
-    margin:20px 0;
-}
+
 
 /* MEMORY WALL */
 
@@ -214,11 +241,13 @@ nav a{
 }
 
 .wall-card{
-    background:white;
+    background:#111827;
     padding:25px;
     border-radius:20px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
     transition:.3s;
 }
 
@@ -227,34 +256,46 @@ nav a{
 }
 
 .wall-card h3{
-    color:#ff4f87;
+    color:#60a5fa;
     margin-bottom:10px;
+}
+
+.wall-card p{
+    color:#d1d5db;
 }
 
 /* CLOSING */
 
 .closing{
-    background:white;
+    background:#111827;
     text-align:center;
     padding:50px;
     border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
 }
 
 .closing h2{
-    color:#ff4f87;
+    color:#60a5fa;
     margin-bottom:20px;
+}
+
+.closing p{
+    color:#d1d5db;
 }
 
 /* FOOTER */
 
 footer{
     margin-top:50px;
-    background:#ff4f87;
-    color:white;
+    background:#0b1120;
+    color:#cbd5e1;
     text-align:center;
     padding:50px;
+    border-top:1px solid rgba(96,165,250,.15);
 }
+
 
 /* ANIMATION */
 
@@ -291,7 +332,13 @@ footer{
     padding-left:60px;
     padding-right:10px;
 }
-
+.memory-card{
+    cursor:pointer;
+}
+.memory-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(96,165,250,.2);
+}
 .title{
     font-size:2.2rem;
 }
@@ -301,6 +348,110 @@ nav{
 }
 
 }
+.letter-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#5DE4FF,#2BB8FF);
+    color:#08122D;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(93,228,255,.3);
+}
+
+.letter-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(93,228,255,.5);
+}
+/* IMAGE POPUP */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:20px;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:75vh;
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+#modalCaption{
+    margin-top:20px;
+    color:white;
+    font-size:1.2rem;
+    text-align:center;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:rgba(255,255,255,.8);
+color:#555;
+font-size:30px;
+cursor:pointer;
+z-index:10000;
+}
+
+#prevBtn{
+left:30px;
+}
+
+#nextBtn{
+right:30px;
+}
+
+.nav-btn:hover{
+background:white;
+}
+
+@media(max-width:768px){
+.nav-btn{
+width:45px;
+height:45px;
+font-size:24px;
+}
+
+
+#prevBtn{
+    left:10px;
+}
+
+#nextBtn{
+    right:10px;
+}
+
+
+}
+
 
 </style>
 </head>
@@ -359,35 +510,40 @@ that will always have a special place in our hearts.
 <div class="timeline">
 
 <div class="memory left">
-<div class="memory-card">
+<div class="memory-card" onclick="openTimelineImage('image2.jpg','13th Feb 2026 ❤️','The beginning of many wonderful memories.')">
+
 <h3>2015</h3>
 <p>The beginning of many wonderful memories.</p>
 </div>
 </div>
 
 <div class="memory right">
-<div class="memory-card">
+<div class="memory-card" onclick="openTimelineImage('image3.jpg','22nd Feb 2026 ❤️','A day filled with adventures and laughter.')">
+
 <h3>2018</h3>
 <p>A year filled with adventures and laughter.</p>
 </div>
 </div>
 
 <div class="memory left">
-<div class="memory-card">
+<div class="memory-card"     onclick="openTimelineImage('image4.jpg','2021 ❤️','Special celebrations and unforgettable moments.')">
+
 <h3>2021</h3>
 <p>Special celebrations and unforgettable moments.</p>
 </div>
 </div>
 
 <div class="memory right">
-<div class="memory-card">
+<div class="memory-card"     onclick="openTimelineImage('image5.jpg','2024 ❤️','New milestones and beautiful experiences.')">
+
 <h3>2024</h3>
 <p>New milestones and beautiful experiences.</p>
 </div>
 </div>
 
 <div class="memory left">
-<div class="memory-card">
+<div class="memory-card"     onclick="openTimelineImage('image6.jpg','Today ❤️','Celebrating a journey filled with memories.')">
+
 <h3>Today</h3>
 <p>Celebrating a journey filled with memories.</p>
 </div>
@@ -405,14 +561,14 @@ that will always have a special place in our hearts.
 
 <div class="gallery">
 
-<img src="image2.jpg" alt="">
-<img src="image3.jpg" alt="">
-<img src="image4.jpg" alt="">
-<img src="image5.jpg" alt="">
-<img src="image6.jpg" alt="">
-<img src="image7.jpg" alt="">
-<img src="image8.jpg" alt="">
-<img src="image9.jpg" alt="">
+<img src="image2.jpg" alt="Our First Memory ❤️" class="gallery-img">
+<img src="image3.jpg" alt="Happy Moments ❤️" class="gallery-img">
+<img src="image4.jpg" alt="Special Day ❤️" class="gallery-img">
+<img src="image5.jpg" alt="Unforgettable Memory ❤️" class="gallery-img">
+<img src="image6.jpg" alt="Our First Memory ❤️" class="gallery-img">
+<img src="image7.jpg" alt="Happy Moments ❤️" class="gallery-img">
+<img src="image8.jpg" alt="Special Day ❤️" class="gallery-img">
+<img src="image9.jpg" alt="Unforgettable Memory ❤️" class="gallery-img">
 
 </div>
 
@@ -489,7 +645,11 @@ And the best treasures stay with us forever.
 </p>
 
 </div>
-
+<div style="text-align:center; margin-top:40px;">
+    <button class="letter-btn" onclick="location.href='wishes.html'">
+        💌 Read The Letter
+    </button>
+</div>
 </section>
 
 <footer>
@@ -563,11 +723,113 @@ document.addEventListener("click", () => {
     music.play();
 }, { once:true });
 
-music.volume = 0.3;
+music.volume = 2;
 
 </script>
 
 
+<!-- IMAGE POPUP -->
+<div id="imageModal" class="modal">
+
+
+<span class="close">&times;</span>
+
+<button id="prevBtn" class="nav-btn">&#10094;</button>
+
+<img id="modalImg">
+
+<button id="nextBtn" class="nav-btn">&#10095;</button>
+
+<div id="modalCaption"></div>
+
+
+</div>
+<script>
+
+function openTimelineImage(imgSrc,title,text){
+
+    modal.style.display = "flex";
+
+    modalImg.src = imgSrc;
+
+    caption.innerHTML =
+    "<h2>" + title + "</h2><br>" + text;
+
+}
+
+</script>
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const caption = document.getElementById("modalCaption");
+const closeBtn = document.querySelector(".close");
+
+const images = document.querySelectorAll(".gallery-img");
+
+let currentIndex = 0;
+
+function showImage(index){
+
+
+currentIndex = index;
+
+modal.style.display = "flex";
+modalImg.src = images[index].src;
+caption.innerText = images[index].alt;
+
+
+}
+
+images.forEach((img,index)=>{
+
+
+img.addEventListener("click",()=>{
+
+    showImage(index);
+
+});
+
+
+});
+
+document.getElementById("nextBtn").onclick = ()=>{
+
+
+currentIndex++;
+
+if(currentIndex >= images.length){
+    currentIndex = 0;
+}
+
+showImage(currentIndex);
+
+
+};
+
+document.getElementById("prevBtn").onclick = ()=>{
+
+
+currentIndex--;
+
+if(currentIndex < 0){
+    currentIndex = images.length - 1;
+}
+
+showImage(currentIndex);
+
+
+};
+
+closeBtn.onclick = ()=>{
+modal.style.display = "none";
+};
+
+modal.onclick = (e)=>{
+if(e.target === modal){
+modal.style.display = "none";
+}
+};
+</script>
 
 </body>
 </html>
